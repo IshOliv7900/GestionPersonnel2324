@@ -1,0 +1,59 @@
+
+DTG de la sauvegarde : 06/15/2024 6:11:02 PM
++-----------------------+-------------------+--------------------+--------+--------------+-------------------------+
+| Département           | Prénom            | Nom                | Sexe   | Naissance    | Email                   |
++-----------------------+-------------------+--------------------+--------+--------------+-------------------------+
+ Ressources Humaines      Albert              Collon              Garçon    10-8-1990      Collon.a@test.be         
+ Ressources Humaines      Marie               Peeters             Fille     1-5-1999       Peeters.M@test.be        
+ Comptabilité             Sarah               Janssens            Fille     23-5-2001      Sarah.Janssens@test.be   
+ Comptabilité             Henri               Maes                Garçon    14-9-1996      MaesHenri@test.be        
+ Sécurité                 Charles             Jacobs              Garçon    12-12-2002     Charles.j@test.be        
+ Sécurité                 Florinne            Martens             Fille     20-8-1997      FloFlo.M@test.be         
+ Production               Francois-Xavier     Willens             Garçon    28-10-1996     Willems.F-X@test.be      
+ Production               Shan                O'Neil              Garçon    1-7-2001       ONeil.sh@test.be         
+ Ressources Humaines      Stéphanie           Goossen             Fille     25-10-2008     NieNieG@test.be          
+ Ressources Humaines      Stéphanie           Goossen             Fille     25-10-2008     NieNieG@test.be          
+ Ressources Humaines      Charles             Dumont              Garçon    1-4-1969       dumont.c@test.be         
+ Comptabilité             Wilfried            Van Moore           Garçon    25-2-1998      vanmoore.w@test.be       
+ Production               Nathalie            Herman              Fille     26-7-2001      herman.n@test.be         
+ Production               Annie               Bontemps            Fille     23-9-1998      bontemps.a@test.be       
+ Production               prenom              test                Garçon    28-10-1962     test@test.be             
+
+
++------+-------------------------+----------------------------------------+
+| N°   | Nom - Prénom            | Matèriel                               |
++------+-------------------------+----------------------------------------+
+ 1       Collon Albert             HP  Elitebook 850 G7          
+ 2       Peeters  Marie            Dell  Inspiron 15 3000        
+ 3       Janssens Sarah            Dell  XPS 13                  
+ 4       Maes Henri                Lenovo  Thinkpad E15 G2       
+
+DTG de la sauvegarde : 06/16/2024 8:54:05 PM
++---------------------------+-------------------+--------------------+----------+--------------+--------------------------+
+| Département               | Prénom            | Nom                |   Sexe   | Naissance    |  Email                   |
++---------------------------+-------------------+--------------------+----------+--------------+--------------------------+
+ Ressources Humaines      Albert              Collon              Garçon    10-8-1990      Collon.a@test.be         
+ Ressources Humaines      Marie               Peeters             Fille     1-5-1999       Peeters.M@test.be        
+ Comptabilité             Sarah               Janssens            Fille     23-5-2001      Sarah.Janssens@test.be   
+ Comptabilité             Robert              Maes                Garçon    14-9-1996      maes.r@test.be           
+ Sécurité                 Charles             Jacobs              Garçon    12-12-2002     Charles.j@test.be        
+ Sécurité                 Florinne            Martens             Fille     20-8-1997      FloFlo.M@test.be         
+ Production               Francois-Xavier     Willens             Garçon    28-10-1996     Willems.F-X@test.be      
+ Production               Shan                O'Neil              Garçon    1-7-2001       ONeil.sh@test.be         
+ Ressources Humaines      Stéphanie           Goossen             Fille     25-10-2008     NieNieG@test.be          
+ Ressources Humaines      Stéphanie           Goossen             Fille     25-10-2008     NieNieG@test.be          
+ Ressources Humaines      Charles             Dumont              Garçon    1-4-1969       dumont.c@test.be         
+ Comptabilité             Wilfried            Van Moore           Garçon    25-2-1998      vanmoore.w@test.be       
+ Production               Nathalie            Herman              Fille     26-7-2001      herman.n@test.be         
+ Production               Annie               Bontemps            Fille     23-9-1998      bontemps.a@test.be       
+ Comptabilité             Xavier              degand              Fille     28-10-2008     degand.x@test.be         
+ Sécurité                 test                test                Garçon    1-1-2000       test@te.be               
+
+
++------+-------------------------+----------------------------------------+
+| N°   | Nom - Prénom            | Matèriel                               |
++------+-------------------------+----------------------------------------+
+ 1       Collon Albert             HP  Elitebook 850 G7          
+ 2       Peeters  Marie            Dell  Inspiron 15 3000        
+ 3       Janssens Sarah            Dell  XPS 13                  
+ 4       Maes Robert               Lenovo  Thinkpad E15 G2       
