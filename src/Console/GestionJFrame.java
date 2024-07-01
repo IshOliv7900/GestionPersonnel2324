@@ -1,103 +1,101 @@
 package Console;
 
-import java.awt.Component;
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 public class GestionJFrame extends JFrame {
-   private static final long serialVersionUID = 1L; // Add this line
+    private static final long serialVersionUID = 1L;
 
-   protected JButton btnLoad;
-   protected JButton btnAffichage;
-   protected JButton btnMag;
-   protected JButton btnPret;
-   protected JButton btnRetour;
-   protected JButton btnModifPersonnel;
-   protected JButton btnSupprimerPersonnel;
-   protected JButton btnAjoutPersonnel;
-   protected JButton btnSauvegarde;
-   protected JButton btnClose;
-   private ArrayList<Personnel> Person = new ArrayList<>();
-   private Magasin mag = new Magasin();
-   private ArrayList<Emprunt> pret = new ArrayList<>();
-   private Sauvegarde save = new Sauvegarde();
-   private AffichagePers affichePers = new AffichagePers();
-   private GestionPersonnel gestpers = new GestionPersonnel();
-   private GestionEmprunt gestemprunt = new GestionEmprunt();
+    protected JButton btnLoad, btnAffichage, btnMag, btnPret, btnRetour,
+                      btnModifPersonnel, btnSupprimerPersonnel, btnAjoutPersonnel,
+                      btnSauvegarde, btnClose;
+    private ArrayList<Personnel> Person = new ArrayList<>();
+    private Magasin mag = new Magasin();
+    private ArrayList<Emprunt> pret = new ArrayList<>();
+    private Sauvegarde save = new Sauvegarde();
+    private AffichagePers affichePers = new AffichagePers();
+    private GestionPersonnel gestpers = new GestionPersonnel();
+    private GestionEmprunt gestemprunt = new GestionEmprunt();
 
-   public GestionJFrame() {
-      super("Gestion Personnel & prêt matériel. ");
-      this.setDefaultCloseOperation(2);
-      JPanel contentPane = (JPanel)this.getContentPane();
-      String texteBtnAfficher = new String("<html><Div Align=Center> Affichage <BR> données personnel </Div></html>");
-      String texteBtnModifPersonnel = new String("<html><Div Align=Center> Modification <BR> données personnel </Div></html>");
-      String texteBtnLoad = new String("<html><Div Align=Center> Charger <BR> données personnel </Div></html>");
-      this.btnLoad = new JButton(texteBtnLoad);
-      this.btnAffichage = new JButton(texteBtnAfficher);
-      this.btnMag = new JButton("Création du magasin");
-      this.btnPret = new JButton("Prêt de matériel");
-      this.btnRetour = new JButton("Retour de matériel");
-      this.btnModifPersonnel = new JButton(texteBtnModifPersonnel);
-      this.btnSupprimerPersonnel = new JButton("Supprimer une personne");
-      this.btnAjoutPersonnel = new JButton("Ajouter une personne");
-      this.btnSauvegarde = new JButton("Sauvegarde ");
-      this.btnClose = new JButton("Fermer");
-      contentPane.setLayout(new GridLayout(3, 1));
-      contentPane.add(this.btnLoad);
-      contentPane.add(this.btnAffichage);
-      contentPane.add(this.btnMag);
-      contentPane.add(this.btnPret);
-      contentPane.add(this.btnRetour);
-      contentPane.add(this.btnModifPersonnel);
-      contentPane.add(this.btnSupprimerPersonnel);
-      contentPane.add(this.btnAjoutPersonnel);
-      contentPane.add(this.btnSauvegarde);
-      contentPane.add(this.btnClose);
-      this.btnLoad.addActionListener((e) -> {
-         try {
-            this.gestpers.LoadPersonnel(this.Person);
-         } catch (SAXException var3) {
-            throw new RuntimeException(var3);
-         } catch (IOException var4) {
-            throw new RuntimeException(var4);
-         } catch (ParserConfigurationException var5) {
-            throw new RuntimeException(var5);
-         }
-      });
-      this.btnAffichage.addActionListener((e) -> {
-         this.affichePers.AffichageListe(this.Person);
-      });
-      this.btnMag.addActionListener((e) -> {
-         GestionEmprunt.Magasin(this.mag);
-      });
-      this.btnPret.addActionListener((e) -> {
-         this.gestemprunt.Emprunt(this.mag, this.Person, this.pret);
-      });
-      this.btnRetour.addActionListener((e) -> {
-         this.gestemprunt.RetourEmprunt(this.pret);
-      });
-      this.btnModifPersonnel.addActionListener((e) -> {
-         this.gestpers.ModifPersonnel(this.Person);
-      });
-      this.btnSupprimerPersonnel.addActionListener((e) -> {
-         this.gestpers.SuppressionPersonnel(this.Person);
-      });
-      this.btnSauvegarde.addActionListener((e) -> {
-         this.save.Sauvegarde(this.Person, this.pret);
-      });
-      this.btnAjoutPersonnel.addActionListener((e) -> {
-         this.gestpers.AjoutPersonnel(this.Person);
-      });
-      this.btnClose.addActionListener((e) -> {
-         this.dispose();
-      });
-      this.setSize(800, 600);
-      this.setLocationRelativeTo((Component)null);
-   }
+    public GestionJFrame() {
+        super("Gestion Personnel & prêt matériel.");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(800, 600);
+        setLocationRelativeTo(null);
+
+        JPanel mainPanel = new JPanel(new GridLayout(3, 4, 10, 10)); // grid with 3 rows and 4 columns
+        initializeButtons();
+        addActionListeners();
+        addButtonsToPanel(mainPanel);
+
+        // Panel for copyright text at the bottom
+        JPanel bottomPanel = new JPanel(new BorderLayout());
+        JLabel copyrightLabel = new JLabel("Copyright IPEPS Tournai", JLabel.CENTER);
+        bottomPanel.add(copyrightLabel, BorderLayout.SOUTH);
+
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(mainPanel, BorderLayout.CENTER);
+        getContentPane().add(bottomPanel, BorderLayout.SOUTH);
+    }
+
+    private void initializeButtons() {
+        btnLoad = new JButton("Charger données personnel");
+        btnAffichage = new JButton("Afficher données personnel");
+        btnMag = new JButton("Créer magasin");
+        btnPret = new JButton("Prêter matériel");
+        btnRetour = new JButton("Retourner matériel");
+        btnModifPersonnel = new JButton("Modifier personnel");
+        btnSupprimerPersonnel = new JButton("Supprimer personnel");
+        btnAjoutPersonnel = new JButton("Ajouter personnel");
+        btnSauvegarde = new JButton("Sauvegarder");
+        btnClose = new JButton("Fermer");
+    }
+
+    private void addActionListeners() {
+        btnLoad.addActionListener(e -> loadPersonnel());
+        btnAffichage.addActionListener(e -> affichePers.AffichageListe(Person));
+        btnMag.addActionListener(e -> GestionEmprunt.Magasin(mag));
+        btnPret.addActionListener(e -> gestemprunt.Emprunt(mag, Person, pret));
+        btnRetour.addActionListener(e -> gestemprunt.RetourEmprunt(pret));
+        btnModifPersonnel.addActionListener(e -> gestpers.ModifPersonnel(Person));
+        btnSupprimerPersonnel.addActionListener(e -> gestpers.SuppressionPersonnel(Person));
+        btnAjoutPersonnel.addActionListener(e -> gestpers.AjoutPersonnel(Person));
+        btnSauvegarde.addActionListener(e -> save.Sauvegarde(Person, pret));
+        btnClose.addActionListener(e -> dispose());
+    }
+
+    private void addButtonsToPanel(JPanel panel) {
+        panel.add(btnLoad);
+        panel.add(btnAffichage);
+        panel.add(btnMag);
+        panel.add(btnPret);
+        panel.add(btnRetour);
+        panel.add(btnModifPersonnel);
+        panel.add(btnSupprimerPersonnel);
+        panel.add(btnAjoutPersonnel);
+        panel.add(btnSauvegarde);
+        panel.add(btnClose);
+    }
+
+    private void loadPersonnel() {
+        try {
+            gestpers.LoadPersonnel(Person);
+            System.out.println("Personnel chargé avec succès : " + Person.size() + " personnes.");
+        } catch (SAXException | IOException | ParserConfigurationException ex) {
+            System.err.println("Erreur lors du chargement des données personnel : " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        new GestionJFrame().setVisible(true);
+    }
 }
