@@ -10,6 +10,7 @@ public class Lire {
       this.clavier = new Scanner(System.in);
    }
 
+   // Saisit un texte depuis la console
    protected String SaiseTexte(String libelle) {
       String texte = null;
       System.out.print(libelle);
@@ -33,6 +34,7 @@ public class Lire {
       return texte;
    }
 
+   // Saisit un entier depuis la console
    protected int saisieInt() {
       boolean valid = false;
       int intValue = 0;
@@ -54,6 +56,7 @@ public class Lire {
       return intValue;
    }
 
+   // Vide le buffer de saisie
    private void vider() {
       try {
          this.clavier.nextLine();

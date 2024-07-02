@@ -13,6 +13,7 @@ public class Magasin {
       produits = new HashMap<>();
    }
 
+   // Ajoute des produits au magasin
    public void AjouterProduit() {
       produits.put("Id_1", new Produit("HP", "Elitebook 850 G7"));
       produits.put("Id_2", new Produit("HP", "Elitebook 830 G7 X360"));
@@ -23,6 +24,7 @@ public class Magasin {
       produits.put("Id_7", new Produit("Lenovo", "IdeaPad 3 14IIL05 81WD00B2MH"));
    }
 
+   // Affiche la liste des produits
    public void listeMap() {
       System.out.println("Le magasin est composé de " + produits.size() + " articles");
       Iterator<Entry<String, Produit>> var1 = produits.entrySet().iterator();
@@ -35,10 +37,12 @@ public class Magasin {
       }
    }
 
+   // Récupère un produit par son nom
    public Produit getProduit(String nom) {
       return produits.containsKey(nom) ? produits.get(nom) : null;
    }
 
+   // Vérifie si le magasin est vide
    public boolean isEmpty() {
       return produits.isEmpty();
    }

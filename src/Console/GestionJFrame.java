@@ -14,6 +14,7 @@ import org.xml.sax.SAXException;
 public class GestionJFrame extends JFrame {
     private static final long serialVersionUID = 1L;
 
+    // Définition des boutons de l'interface graphique
     protected JButton btnLoad, btnAffichage, btnMag, btnPret, btnRetour,
                       btnModifPersonnel, btnSupprimerPersonnel, btnAjoutPersonnel,
                       btnSauvegarde, btnClose;
@@ -25,18 +26,19 @@ public class GestionJFrame extends JFrame {
     private GestionPersonnel gestpers = new GestionPersonnel();
     private GestionEmprunt gestemprunt = new GestionEmprunt();
 
+    // Constructeur pour initialiser la fenêtre de gestion
     public GestionJFrame() {
         super("Gestion Personnel & prêt matériel.");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
         setLocationRelativeTo(null);
 
-        JPanel mainPanel = new JPanel(new GridLayout(3, 4, 10, 10)); // grid with 3 rows and 4 columns
+        JPanel mainPanel = new JPanel(new GridLayout(3, 4, 10, 10)); // grille avec 3 lignes et 4 colonnes
         initializeButtons();
         addActionListeners();
         addButtonsToPanel(mainPanel);
 
-        // Panel for copyright text at the bottom
+        // Panel pour le texte de copyright en bas de la fenêtre
         JPanel bottomPanel = new JPanel(new BorderLayout());
         JLabel copyrightLabel = new JLabel("Copyright IPEPS Tournai", JLabel.CENTER);
         bottomPanel.add(copyrightLabel, BorderLayout.SOUTH);
@@ -46,6 +48,7 @@ public class GestionJFrame extends JFrame {
         getContentPane().add(bottomPanel, BorderLayout.SOUTH);
     }
 
+    // Méthode pour initialiser les boutons
     private void initializeButtons() {
         btnLoad = new JButton("Charger données personnel");
         btnAffichage = new JButton("Afficher données personnel");
@@ -59,6 +62,7 @@ public class GestionJFrame extends JFrame {
         btnClose = new JButton("Fermer");
     }
 
+    // Méthode pour ajouter des listeners aux boutons
     private void addActionListeners() {
         btnLoad.addActionListener(e -> loadPersonnel());
         btnAffichage.addActionListener(e -> affichePers.AffichageListe(Person));
@@ -72,6 +76,7 @@ public class GestionJFrame extends JFrame {
         btnClose.addActionListener(e -> dispose());
     }
 
+    // Méthode pour ajouter les boutons au panneau principal
     private void addButtonsToPanel(JPanel panel) {
         panel.add(btnLoad);
         panel.add(btnAffichage);
@@ -85,6 +90,7 @@ public class GestionJFrame extends JFrame {
         panel.add(btnClose);
     }
 
+    // Méthode pour charger les données du personnel
     private void loadPersonnel() {
         try {
             gestpers.LoadPersonnel(Person);
@@ -95,7 +101,9 @@ public class GestionJFrame extends JFrame {
         }
     }
 
+    // Méthode principale pour lancer la fenêtre de gestion
     public static void main(String[] args) {
         new GestionJFrame().setVisible(true);
     }
 }
+

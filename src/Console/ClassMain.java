@@ -8,15 +8,17 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 public class ClassMain {
-   
-   public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException {
-      try {
-         UIManager.setLookAndFeel(new NimbusLookAndFeel());
-      } catch (UnsupportedLookAndFeelException e) {
-         e.printStackTrace();
-      }
+    // Méthode principale pour lancer l'application
+    public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException {
+        try {
+            UIManager.setLookAndFeel(new NimbusLookAndFeel());
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
 
-      GestionJFrame fenetre = new GestionJFrame();
-      fenetre.setVisible(true);
-   }
+        // Créer et afficher la fenêtre principale
+        GestionJFrame fenetre = new GestionJFrame();
+        fenetre.setVisible(true);
+    }
 }
+

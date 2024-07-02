@@ -3,6 +3,7 @@ package Console;
 public class InputData {
    private static Lire saisie = new Lire();
 
+   // Saisit et valide le nom ou prénom
    protected static String inputNomPrenom(String libelle, int tailleNom) {
       boolean arret = false;
       String result;
@@ -24,6 +25,7 @@ public class InputData {
       return result;
    }
 
+   // Saisit et valide l'email
    protected static String inputEmail() {
       boolean arret = false;
       String email;
@@ -41,6 +43,7 @@ public class InputData {
       return email;
    }
 
+   // Saisit et valide le nom de fichier
    protected static String inputNomFichier() {
       boolean arret = false;
       String result;
@@ -59,6 +62,7 @@ public class InputData {
       return "./Fichier/" + result;
    }
 
+   // Demande la confirmation pour suppression
    protected static boolean suppression() {
       boolean arret = false;
       boolean result = false;
@@ -77,6 +81,7 @@ public class InputData {
       return result;
    }
 
+   // Saisit et valide le sexe
    protected static String inputSexe() {
       boolean arret = false;
       boolean result = false;
@@ -96,6 +101,7 @@ public class InputData {
       return texte;
    }
 
+   // Saisit et valide le département
    protected static String InputDepartement() {
       boolean arret = false;
       boolean result = false;
@@ -120,6 +126,7 @@ public class InputData {
       return texte;
    }
 
+   // Saisit et valide la date de naissance
    public static String inputDateNaissance() {
       boolean arret = false;
       String date;

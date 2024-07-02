@@ -2,17 +2,20 @@ package Console;
 
 public class WordUtils {
 
+   // Met en majuscule la première lettre de chaque mot
    private static String capitalize(String value) {
       String firstChar = value.substring(0, 1).toUpperCase();
       String outvalue = firstChar + value.substring(1).toLowerCase();
       return outvalue;
    }
 
+   // Met en minuscule l'ensemble du texte
    private static String minimize(String value) {
       String outvalue = value.toLowerCase();
       return outvalue;
    }
 
+   // Met en majuscule la première lettre de chaque mot du texte donné
    protected static String mettreEnMajscule(String inputString) {
       String outString;
       String[] partString;
@@ -65,6 +68,7 @@ public class WordUtils {
       }
    }
 
+   // Met en minuscule les parties de l'email après @
    protected static String mettreEnMinusculeMail(String inputString) {
       String outString = "";
       String[] partString = inputString.split("@");

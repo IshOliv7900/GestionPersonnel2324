@@ -1,25 +1,28 @@
 package Console;
 
 public class MyDate {
-   private int jour;
-   private int mois;
-   private int annee;
+    private int jour;
+    private int mois;
+    private int annee;
 
-   public MyDate(int jour, int mois, int annee) {
-      this.jour = jour;
-      this.mois = mois;
-      this.annee = annee;
-   }
+    // Constructeur pour initialiser les attributs de la date
+    public MyDate(int jour, int mois, int annee) {
+        this.jour = jour;
+        this.mois = mois;
+        this.annee = annee;
+    }
 
-   public int getJour() {
-      return this.jour;
-   }
+    // Méthodes getters pour les attributs de la date
+    public int getJour() {
+        return this.jour;
+    }
 
-   public int getMois() {
-      return this.mois;
-   }
+    public int getMois() {
+        return this.mois;
+    }
 
-   public int getAnnee() {
-      return this.annee;
-   }
+    public int getAnnee() {
+        return this.annee;
+    }
 }
+

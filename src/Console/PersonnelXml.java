@@ -14,8 +14,11 @@ public class PersonnelXml {
     public static Document document;
     public static Element racine;
 
+    // Méthode pour lire les données du fichier XML
     static NodeList Lecture() throws SAXException, IOException, ParserConfigurationException {
-        // Use relative path
+    	
+        // Utiliser un chemin relatif
+    	
         File inputFile = new File("Fichier/Personnel.xml");
         
         if (!inputFile.exists()) {
@@ -31,3 +34,4 @@ public class PersonnelXml {
         return listPers;
     }
 }
+

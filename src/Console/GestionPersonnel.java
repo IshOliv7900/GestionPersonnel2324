@@ -16,6 +16,7 @@ public class GestionPersonnel {
    private InputData inputData = new InputData();
    private WordUtils wordutils = new WordUtils();
 
+   // Charge les données du personnel à partir d'un fichier XML
    protected void LoadPersonnel(ArrayList<Personnel> Person) throws SAXException, IOException, ParserConfigurationException {
       if (!Person.isEmpty()) {
          System.out.println(" Le personnel est déjà chargé !");
@@ -57,6 +58,7 @@ public class GestionPersonnel {
       }
    }
 
+   // Modifie les informations d'une personne du personnel
    protected void ModifPersonnel(ArrayList<Personnel> Person) {
       this.affichePers.AffichageListe(Person);
       boolean egal = false;
@@ -85,6 +87,7 @@ public class GestionPersonnel {
       }
    }
 
+   // Supprime une personne du personnel
    protected void SuppressionPersonnel(ArrayList<Personnel> Person) {
       this.affichePers.AffichageListe(Person);
       boolean egal = false;
@@ -111,6 +114,7 @@ public class GestionPersonnel {
       }
    }
 
+   // Ajoute une nouvelle personne au personnel
    public void AjoutPersonnel(ArrayList<Personnel> person) {
       System.out.println("Introduire les données du nouveau membre du personnel. ");
       WordUtils Myval1 = this.wordutils;
